@@ -1,38 +1,48 @@
-# Order
-This is a repository for managing the Union fashion order service, keeping track of the details of each version being released, and the other supporting elements of the API life cycle.
+# Union Fashion Order API
+This an API for managing orders that exist in the Union Fashion system, allowing any desktop, web, mobile, or device application to integrate with the orders place acros the platform.
+
+Everything you will need to know about the orders API should be available, providing links to al the areas of development for the API and it's supporting resources.
 
 ## Organization
-These are the overall elements that help organize the management of the order service.
+These are all of the ways in which the orders API is organized.
 
-- **[Workspace](https://union-fashion.postman.co/workspaces/67f9508f-a375-4a65-8450-b7f0aabc4cc4/apis)** - The Postman workspace for managing the order service. [REQUIRES ACCESS]
-- **[Integrations](https://union-fashion.postman.co/workspaces/67f9508f-a375-4a65-8450-b7f0aabc4cc4/integrations)** - The Postman integrations for managing the order service workspace. [REQUIRES ACCESS]
-- **[Activity](https://union-fashion.postman.co/workspaces/67f9508f-a375-4a65-8450-b7f0aabc4cc4/activity)** - The Postman activity for the order service workspace. [REQUIRES ACCESS]
+- **Team** - ([Union Fashion](https://union-fashion.postman.co/team)) - The team to which the orders API belongs.
+- **Workspace** - [Orders](https://union-fashion.postman.co/workspaces/67f9508f-a375-4a65-8450-b7f0aabc4cc4/apis) (Requires Access) - The Postman workspace for managing Orders.
+- **Organization** - [Union Fashion](https://github.com/union-fashion) - The GitHub organization where the orders API belongs.
+- **Repository** - [Union Fashion / orders](https://github.com/union-fashion/orders) - The GitHub repository dedicated to the orders API.
+- **API** - [Orders](https://union-fashion.postman.co/apis/b06cd7bd-51a8-40df-a036-d5cec42700c6?version=e9d51adf-9738-4e58-9c76-b0d11c196d1d) (Requires Access) - The machine readable contract for the API.
+- **Collections** - Derivatives of the orders API contract.
+  - **Orders**
+    - [**Working**](https://union-fashion.postman.co/collections/10394726-5d172ec2-d989-4f99-beb1-8ad17294af21) - The collection meant for regular usage and playing around.
+    - [**Documentation**](https://union-fashion.postman.co/collections/10394726-30ed1ac4-3b48-4a2b-83b7-986bc68acfc0) - The collection dedicated to publishing docs and mocks.
+    - [**Contract Testing**](https://union-fashion.postman.co/collections/10394726-c9a6be0b-b1ce-48d0-9f20-6c88dec22f7c) - The collection that is just for testing the contract.
+- **Environments** - Postman environments for managing the orders API.
+    - [**Development - Mock**](https://union-fashion.postman.co/environments/10394726-3321a268-3a70-43c7-981e-c204cc5f5fd7?workspace=67f9508f-a375-4a65-8450-b7f0aabc4cc4) - The environment for applying against APIs being developed using a mock environment.
 
-## Development
-These are the details available for the current development version of the order services.
+## Mock Server(s)
+These are the available mock servers for the orders API.
 
-Version: 1.0.0
+- **Orders** - ([Development URL](https://1bc5667d-f54b-4940-a280-977e2e6d53e1.mock.pstmn.io)) - The URL for the development order mock server.
 
-- **[Schema](https://union-fashion.postman.co/apis/1f0e6048-ff37-4bf2-b12f-615df0666bd4?version=4d29d5a4-5d2a-4953-a76d-9fc1889a4f8e)** - Mock servers published for development of this API. [REQUIRES ACCESS]
-- **Collections**
-  - [Orders - v1.0.0](https://union-fashion.postman.co/collections/10394726-74cd7bd6-944d-46a1-8103-42ff2f2d5508?version=latest&workspace=67f9508f-a375-4a65-8450-b7f0aabc4cc4) - Primary collection.
-- **[Mocks](https://union-fashion.postman.co/collections/10394726-74cd7bd6-944d-46a1-8103-42ff2f2d5508/mocks?version=latest&workspace=67f9508f-a375-4a65-8450-b7f0aabc4cc4)** - Mock servers published for development of this API. [REQUIRES ACCESS]
-- **[Documentation](https://union-fashion.postman.co/collections/10394726-74cd7bd6-944d-46a1-8103-42ff2f2d5508?version=latest&workspace=67f9508f-a375-4a65-8450-b7f0aabc4cc4)** - The Postman documentation published for the order service. [REQUIRES ACCESS]
-- **[Environment](https://union-fashion.postman.co/environments/10394726-3321a268-3a70-43c7-981e-c204cc5f5fd7)** - The Postman build environment for the order service. [REQUIRES ACCESS]
+## Documentation
+This is the available documentation for the orders API.
 
-## Production
-These are the details available for the current production version of the order services.
-
-Version: 1.0.0
-
-- **[Documentation](https://documenter.getpostman.com/view/10394726/SzKWswNw?version=latest)** - The Postman documentation published to support the order service. [REQUIRES ACCESS]
-- **[Environment](https://union-fashion.postman.co/environments/10394726-0236e547-b456-46e5-abd5-ca80b96574c4)** - The Postman production environment for the order service. [REQUIRES ACCESS]
-- **[Monitors](https://union-fashion.postman.co/monitors/1ea5768b-f55f-4bc0-8751-7a94c07f4b0c?result=success&result=failure&result=error&result=abort&trigger=api&trigger=schedule&trigger=webhook&workspace=67f9508f-a375-4a65-8450-b7f0aabc4cc4)** - The monitors that have been published for the order service. [REQUIRES ACCESS]
-- **[History](https://union-fashion.postman.co/workspaces/67f9508f-a375-4a65-8450-b7f0aabc4cc4/history)** - The Postman history for the order service. [REQUIRES ACCESS]
-- **[Reports](https://union-fashion.postman.co/reports/apis/1f0e6048-ff37-4bf2-b12f-615df0666bd4?interval=last30Days&version=7c15dd48-27eb-41f6-9b90-5329d8924789)** - The Postman reports for the order service. [REQUIRES ACCESS]
+- **Orders** ([Development](https://documenter.getpostman.com/view/10394726/SzYXXzLu?version=latest)) - This is the latest set of documentation for the orders API complete with Run in Postman button, scripts, and examples.
 
 ## Support
-These are the support elements of the order service, ensuring a feedback loop exists for the service.
+These are the support channels for the orders API.
 
-- [GitHub Issues](https://github.com/union-fashion/orders/issues) - The primary feedback lop for the order service are GitHub issues for this repository.
-- [Comments](https://union-fashion.postman.co/apis/1f0e6048-ff37-4bf2-b12f-615df0666bd4?version=4d29d5a4-5d2a-4953-a76d-9fc1889a4f8e) - Comments via the API builder for the order service.  [REQUIRES ACCESS]
+- [**Issues**](https://github.com/union-fashion/orders/issues) - The issue management for the orders API using GitHub.
+
+## Communication
+These are the areas of communication for the orders API.
+
+- [**Comments**](https://union-fashion.postman.co/apis/1f0e6048-ff37-4bf2-b12f-615df0666bd4?version=77ba0be4-d417-4453-82c6-238ff53d5577) - The comments tab on the orders API.
+- [**History**](https://union-fashion.postman.co/workspaces/67f9508f-a375-4a65-8450-b7f0aabc4cc4/history) - The history for the orders API workspace.
+- [**Activity**](https://union-fashion.postman.co/workspaces/67f9508f-a375-4a65-8450-b7f0aabc4cc4/activity) - The activity for the orders API workspace.
+
+## Testing
+These are the areas in which the orders API is being tested.
+
+- **Contract**
+  - [Monitor](https://union-fashion.postman.co/monitors/1ea73007-dcc3-42b0-8b82-5a8c983bf84c?job=1ea73007-f318-4f10-accc-54cb7f398dbc&result=success&result=failure&result=error&result=abort&trigger=api&trigger=schedule&trigger=webhook&workspace=67f9508f-a375-4a65-8450-b7f0aabc4cc4) - The daily monitor for orders API contract.
