@@ -12,22 +12,21 @@ These are all of the ways in which the orders API is organized.
 - **Repository** - [Union Fashion / orders](https://github.com/union-fashion/orders) - The GitHub repository dedicated to the orders API.
 - **API** - [Orders](https://union-fashion.postman.co/apis/b06cd7bd-51a8-40df-a036-d5cec42700c6?version=e9d51adf-9738-4e58-9c76-b0d11c196d1d) (Requires Access) - The machine readable contract for the API.
 - **Collections** - Derivatives of the orders API contract.
-  - **Orders**
-    - [**Working**](https://union-fashion.postman.co/collections/10394726-5d172ec2-d989-4f99-beb1-8ad17294af21) - The collection meant for regular usage and playing around.
-    - [**Documentation**](https://union-fashion.postman.co/collections/10394726-30ed1ac4-3b48-4a2b-83b7-986bc68acfc0) - The collection dedicated to publishing docs and mocks.
-    - [**Contract Testing**](https://union-fashion.postman.co/collections/10394726-c9a6be0b-b1ce-48d0-9f20-6c88dec22f7c) - The collection that is just for testing the contract.
+  - [**Working**](https://union-fashion.postman.co/collections/10394726-5d172ec2-d989-4f99-beb1-8ad17294af21) - The collection meant for regular usage and playing around.
+  - [**Documentation**](https://union-fashion.postman.co/collections/10394726-30ed1ac4-3b48-4a2b-83b7-986bc68acfc0) - The collection dedicated to publishing docs and mocks.
+  - [**Contract Testing**](https://union-fashion.postman.co/collections/10394726-c9a6be0b-b1ce-48d0-9f20-6c88dec22f7c) - The collection that is just for testing the contract.
 - **Environments** - Postman environments for managing the orders API.
-    - [**Development - Mock**](https://union-fashion.postman.co/environments/10394726-3321a268-3a70-43c7-981e-c204cc5f5fd7?workspace=67f9508f-a375-4a65-8450-b7f0aabc4cc4) - The environment for applying against APIs being developed using a mock environment.
+  - [**Development - Mock**](https://union-fashion.postman.co/environments/10394726-3321a268-3a70-43c7-981e-c204cc5f5fd7?workspace=67f9508f-a375-4a65-8450-b7f0aabc4cc4) - The environment for applying against APIs being developed using a mock environment.
 
 ## Mock Server(s)
 These are the available mock servers for the orders API.
 
-- **Orders** - ([Development URL](https://1bc5667d-f54b-4940-a280-977e2e6d53e1.mock.pstmn.io)) - The URL for the development order mock server.
+- [**Development URL**](https://1bc5667d-f54b-4940-a280-977e2e6d53e1.mock.pstmn.io) - The URL for the development order mock server.
 
 ## Documentation
 This is the available documentation for the orders API.
 
-- **Orders** ([Development](https://documenter.getpostman.com/view/10394726/SzYXXzLu?version=latest)) - This is the latest set of documentation for the orders API complete with Run in Postman button, scripts, and examples.
+- [**Development**](https://documenter.getpostman.com/view/10394726/SzYXXzLu?version=latest) - This is the latest set of documentation for the orders API complete with Run in Postman button, scripts, and examples.
 
 ## Support
 These are the support channels for the orders API.
