@@ -1,0 +1,107 @@
+openapi: 3.0.0
+info:
+  title: Orders
+  description: The API for managing Union Fashion orders.
+  contact: {}
+  version: '1.0.0'
+servers:
+- url: http://example.com
+  variables: {}
+paths:
+  /orders:
+    get:
+      tags:
+      - Orders
+      summary: All
+      description: Returns all of the orders in the Union Fashion system.
+      operationId: getOrders
+      parameters:
+      - name: start
+        in: query
+        description: A starting UNIX timestamp.
+        required: true
+        style: form
+        explode: true
+        schema:
+          type: string
+          example: '{{$timestamp}}'
+      - name: end
+        in: query
+        description: An ending UNIX timestamp.
+        required: true
+        style: form
+        explode: true
+        schema:
+          type: string
+          example: '{{$timestamp}}'
+      responses:
+        200:
+          description: ''
+          headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Orders'
+              example:
+                orders:
+                - id: 1550861260442-MTU1MDg2MTI2MDQ0Mg==
+                  items:
+                  - id: XYZ-JEAN-123
+                    quantity: 2
+      deprecated: false
+components:
+  schemas:
+    Orders:
+      title: All
+      required:
+      - orders
+      type: object
+      properties:
+        orders:
+          type: array
+          items:
+            $ref: '#/components/schemas/Order'
+          description: ''
+      example:
+        orders:
+        - id: 1550861260442-MTU1MDg2MTI2MDQ0Mg==
+          items:
+          - id: XYZ-JEAN-123
+            quantity: 2
+    Order:
+      title: Order
+      required:
+      - id
+      - items
+      type: object
+      properties:
+        id:
+          type: string
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/Item'
+          description: ''
+      example:
+        id: 1550861260442-MTU1MDg2MTI2MDQ0Mg==
+        items:
+        - id: XYZ-JEAN-123
+          quantity: 2
+    Item:
+      title: Item
+      required:
+      - id
+      - quantity
+      type: object
+      properties:
+        id:
+          type: string
+        quantity:
+          type: integer
+          format: int32
+      example:
+        id: XYZ-JEAN-123
+        quantity: 2
+tags:
+- name: Orders
+  description: Requests specific to retrieving placed orders.
