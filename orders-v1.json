@@ -1,107 +1,207 @@
 openapi: 3.0.0
 info:
   title: Orders
-  description: The API for managing Union Fashion orders.
-  contact: {}
-  version: '1.0.0'
+  description: 'This an API for managing orders that exist in the Union Fashion orders, allowing any desktop, web, mobile, or device application to integrate with orders made via our platform.'
+  version: '1.0'
 servers:
-- url: http://example.com
-  variables: {}
+- url: '{{baseUrl}}'
 paths:
   /orders:
-    get:
+    post:
+      summary: Add Order
+      description: Creates a new order.
+      operationId: addOrder
       tags:
-      - Orders
-      summary: All
-      description: Returns all of the orders in the Union Fashion system.
+        - Orders
+      requestBody:
+        description: 'A order schema.'
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Order'
+            example:
+              category: Jeans
+              brand: Union
+              color: black
+              gender: m
+              unitPrice: 49.99
+              unitSalePrice: 29.99
+      security:
+      - api_key: []
+      responses:
+        201:
+          description: 'Successful creation of order.'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Order'
+              example:
+                status: success
+      deprecated: false
+    get:
+      summary: Get Orders
+      description: Pulls a list of all order
       operationId: getOrders
+      tags:
+        - Orders
       parameters:
-      - name: start
+      - name: query
         in: query
-        description: A starting UNIX timestamp.
+        description: 'A query to search for orders by.'
         required: true
-        style: form
-        explode: true
         schema:
           type: string
-          example: '{{$timestamp}}'
-      - name: end
-        in: query
-        description: An ending UNIX timestamp.
-        required: true
-        style: form
-        explode: true
-        schema:
-          type: string
-          example: '{{$timestamp}}'
+          example: 'shirts'
+      security:
+      - api_key: []
       responses:
         200:
-          description: ''
-          headers: {}
+          description: 'List of orders.'
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Orders'
               example:
-                orders:
-                - id: 1550861260442-MTU1MDg2MTI2MDQ0Mg==
-                  items:
-                  - id: XYZ-JEAN-123
-                    quantity: 2
+                status: success
+      deprecated: false
+  '/orders/{orderId}':
+    get:
+      summary: Get Order
+      description: Retrieves a single order.
+      operationId: getOrder
+      tags:
+      - Orders
+      parameters:
+        - name: orderId
+          in: path
+          description: The order ID to retrieve.
+          required: true
+          schema:
+            type: string
+            example: order-one
+      responses:
+        200:
+          description: 'Single order.'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Order'
+              example:
+                status: success
+      deprecated: false
+      security:
+      - api_key: []
+    put:
+      summary: Update
+      description: Supports either full or partial updates.
+      operationId: updateOrder
+      tags:
+      - Orders
+      parameters:
+        - name: orderId
+          in: path
+          description: The order ID to retrieve.
+          required: true
+          schema:
+            type: string
+            example: order-one
+      security:
+      - api_key: []
+      requestBody:
+        description: 'A order object.'
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Order'
+            example:
+              unitSalePrice: 29.99
+        required: true
+      responses:
+        204:
+          description: 'Successfully updated.'
+      deprecated: false
+    delete:
+      tags:
+      - Orders
+      summary: Delete
+      description: 'Delete an individual order.'
+      operationId: deleteOrder
+      parameters:
+        - name: orderId
+          in: path
+          description: The order ID to retrieve.
+          required: true
+          schema:
+            type: string
+            example: order-one
+      security:
+      - api_key: []
+      responses:
+        204:
+          description: 'Order deleted.'
       deprecated: false
 components:
+  securitySchemes:
+    api_key:
+      type: "apiKey"
+      name: "x-api-key"
+      in: "header"
   schemas:
     Orders:
-      title: All
-      required:
-      - orders
-      type: object
-      properties:
-        orders:
-          type: array
-          items:
-            $ref: '#/components/schemas/Order'
-          description: ''
-      example:
-        orders:
-        - id: 1550861260442-MTU1MDg2MTI2MDQ0Mg==
-          items:
-          - id: XYZ-JEAN-123
-            quantity: 2
+      type: array
+      items:
+        $ref: "#/components/schemas/Order"
     Order:
       title: Order
       required:
-      - id
-      - items
+      - identifier
+      - name
       type: object
       properties:
-        id:
+        identifier:
           type: string
-        items:
-          type: array
-          items:
-            $ref: '#/components/schemas/Item'
-          description: ''
-      example:
-        id: 1550861260442-MTU1MDg2MTI2MDQ0Mg==
-        items:
-        - id: XYZ-JEAN-123
-          quantity: 2
-    Item:
-      title: Item
-      required:
-      - id
-      - quantity
-      type: object
-      properties:
-        id:
+        name:
           type: string
-        quantity:
-          type: integer
-          format: int32
+        description:
+          type: string
+        image:
+          type: string
+        url:
+          type: string
+        brand:
+          type: string
+        category:
+          type: string
+        color:
+          type: string
+        logo:
+          type: string
+        manufacturer:
+          type: string
+        material:
+          type: string
+        model:
+          type: string
+        releaseDate:
+          type: string
+        sku:
+          type: string
+        width:
+          type: string
+        weight:
+          type: string
+        depth:
+          type: string
+        height:
+          type: string
       example:
         id: XYZ-JEAN-123
-        quantity: 2
+        category: Jeans
+        brand: Union
+        color: black
+        gender: m
+        unitPrice: 49.99
+        unitSalePrice: 29.99
 tags:
 - name: Orders
-  description: Requests specific to retrieving placed orders.
+  description: 'A order object.'
